@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar/NavBar";
 import "./globals.css";
 import type { Metadata } from "next";
 import SearchModal from "@/components/Modals/SearchModal";
-import Providers from "@/provider/QuerryProvider";
+import {Providers} from "@/provider/QuerryProvider";
 
 export const metadata: Metadata = {
 	title: "Hotels&Co",

@@ -6,20 +6,16 @@ interface IParams {
 }
 
 const ListingPage = async ({ params }: { params: IParams }) => {
-	const listing = {
-		title: "Lavonhaven",
-		description:
-			"Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
-		imageSrc: "https://loremflickr.com/640/480/city",
-		roomCount: 96,
-		bathroomCount: 92,
-		guestCount: 17,
-		locationValue: "BG",
-		price: 50,
-		createdAt: 1698166784,
-		category: "9702",
-		id: "1",
+	const getHouse = async (): Promise<any> => {
+		const data = await fetch(
+			`https://6536a599bb226bb85dd27493.mockapi.io/hotels/${params.listingId}`
+		);
+		const posts = await data.json();
+		return posts;
 	};
+
+	const listing = await getHouse();
+
 	return <ListingClient listing={listing} />;
 };
 
