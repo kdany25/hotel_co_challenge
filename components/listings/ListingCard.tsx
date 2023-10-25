@@ -1,25 +1,19 @@
 "use client";
-
-import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
+import Image from "next/image";
+
 import { format } from "date-fns";
 
+//Hooks
+import { useRouter } from "next/navigation";
 import useCountries from "@/hooks/useGetCountries";
 
-
+//Components
 import HeartButton from "@/components/Button/HeartButton";
 import Button from "@/components/Button/Button";
 
-interface ListingCardProps {
-	data: any;
-	reservation?: any;
-	onAction?: (id: string) => void;
-	disabled?: boolean;
-	actionLabel?: string;
-	actionId?: string;
-	currentUser?:  null;
-}
+//Type
+import { ListingCardProps } from "@/types";
 
 const ListingCard: React.FC<ListingCardProps> = ({
 	data,

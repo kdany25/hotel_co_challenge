@@ -1,16 +1,12 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
-interface SearchModalStore {
-  isOpen: boolean;
-  onOpen: () => void;
-  onClose: () => void;
-}
+//Type
+import { SearchModalStore } from "@/types";
 
-const useSearchModal = create<SearchModalStore>((set:any) => ({
-  isOpen: false,
-  onOpen: () => set({ isOpen: true }),
-  onClose: () => set({ isOpen: false })
+const useSearchModal = create<SearchModalStore>((set: any) => ({
+	isOpen: false,
+	onOpen: () => set({ isOpen: true }),
+	onClose: () => set({ isOpen: false }),
 }));
-
 
 export default useSearchModal;

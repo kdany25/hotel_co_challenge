@@ -1,16 +1,12 @@
 "use client";
 import { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { useRouter } from "next/navigation";
+
+//Components
 import MenuItem from "@/components/Navbar/MenuItem";
 import Avatar from "@/components/Navbar/Avatar";
 
-interface UserMenuProps {
-	currentUser?: null;
-}
-
-const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
-	const router = useRouter();
+const UserMenu: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleOpen = useCallback(() => {
@@ -62,37 +58,10 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           "
 				>
 					<div className="flex flex-col cursor-pointer">
-						{currentUser ? (
-							<>
-								<MenuItem
-									label="My trips"
-									onClick={() => router.push("/trips")}
-								/>
-								<MenuItem
-									label="My favorites"
-									onClick={() => router.push("/favorites")}
-								/>
-								<MenuItem
-									label="My reservations"
-									onClick={() => router.push("/reservations")}
-								/>
-								<MenuItem
-									label="My properties"
-									onClick={() => router.push("/properties")}
-								/>
-								<MenuItem
-									label="Airbnb your home"
-									onClick={() => {}}
-								/>
-								<hr />
-								<MenuItem label="Logout" onClick={() => {}} />
-							</>
-						) : (
-							<>
-								<MenuItem label="Login" onClick={() => {}} />
-								<MenuItem label="Sign up" onClick={() => {}} />
-							</>
-						)}
+						<>
+							<MenuItem label="Login" onClick={() => {}} />
+							<MenuItem label="Sign up" onClick={() => {}} />
+						</>
 					</div>
 				</div>
 			)}
