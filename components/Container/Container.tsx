@@ -1,13 +1,11 @@
-'use client';
-
-interface ContainerProps {
-  children: React.ReactNode
-};
+"use client";
+//Type
+import { ContainerProps } from "@/types";
 
 const Container: React.FC<ContainerProps> = ({ children }) => {
-  return ( 
-    <div
-      className="
+	return (
+		<div
+			className="
         max-w-[2520px]
         mx-auto
         xl:px-20 
@@ -15,10 +13,10 @@ const Container: React.FC<ContainerProps> = ({ children }) => {
         sm:px-2
         px-4
       "
-    >
-      {children}
-    </div>
-   );
-}
- 
+		>
+			{children}
+		</div>
+	);
+};
+
 export default Container;

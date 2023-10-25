@@ -1,9 +1,12 @@
-import Container from "@/components/Container/Container";
-import { Hotels } from "@/components/Hotels/Hotels";
+//React Query
 import { ReactQueryHydrate } from "@/lib/ReactQueryHydrate";
 import getQueryClient from "@/lib/getQueryClient";
 import { getPostsQueryFn } from "@/utils/postsQueryFns";
 import { dehydrate } from "@tanstack/react-query";
+
+//Components
+import Container from "@/components/Container/Container";
+import { Hotels } from "@/components/Hotels/Hotels";
 
 export default async function Home() {
 	const queryClient = getQueryClient();
@@ -13,22 +16,8 @@ export default async function Home() {
 	return (
 		<div>
 			<Container>
-				<div
-					className="
-            pt-24
-            grid 
-            grid-cols-1 
-            sm:grid-cols-2 
-            md:grid-cols-3 
-            lg:grid-cols-4
-            xl:grid-cols-5
-            2xl:grid-cols-6
-            gap-8
-						border
-						border-green-500
-          "
-				>
-					<div className="border border-red-500 w-full">
+				<div>
+					<div>
 						<ReactQueryHydrate state={dehydratedState}>
 							<div>
 								<Hotels />

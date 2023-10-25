@@ -1,9 +1,9 @@
 "use client";
-import ListingClient from "./ListingClient";
 
-interface IParams {
-	listingId?: string;
-}
+//Component
+import ListingClient from "./ListingClient";
+//Type
+import { IParams } from "@/types";
 
 const ListingPage = async ({ params }: { params: IParams }) => {
 	const getHouse = async (): Promise<any> => {
